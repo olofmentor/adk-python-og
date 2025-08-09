@@ -30,9 +30,11 @@ definition. The rationales to have customized tool are:
 from .bigquery_credentials import BigQueryCredentialsConfig
 from .bigquery_tool import BigQueryTool
 from .bigquery_toolset import BigQueryToolset
+from .load_tool import load_file_to_bigquery
 
 __all__ = [
     "BigQueryTool",
     "BigQueryToolset",
     "BigQueryCredentialsConfig",
+    "load_file_to_bigquery",
 ]

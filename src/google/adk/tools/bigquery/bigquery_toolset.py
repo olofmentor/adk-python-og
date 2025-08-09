@@ -30,6 +30,7 @@ from ...utils.feature_decorator import experimental
 from .bigquery_credentials import BigQueryCredentialsConfig
 from .bigquery_tool import BigQueryTool
 from .config import BigQueryToolConfig
+from .load_tool import load_file_to_bigquery
 
 
 @experimental
@@ -78,6 +79,7 @@ class BigQueryToolset(BaseToolset):
             metadata_tool.list_dataset_ids,
             metadata_tool.list_table_ids,
             query_tool.get_execute_sql(self._tool_config),
+            load_file_to_bigquery,
         ]
     ]
 
