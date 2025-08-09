@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  analysis-agent:
+    build: .
+    image: analysis-agent:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATASET_PATH=/app/data/dataset.csv
+      - DATABASE_URL=sqlite+aiosqlite:///app/data/results.db
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

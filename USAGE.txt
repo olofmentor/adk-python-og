@@ -1,0 +1,2 @@
+POST /analyze
+Body: {"prompt": "mean of sepal_length grouped by species"}\n\nRun with docker-compose: docker compose up --build\n
