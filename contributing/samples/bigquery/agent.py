@@ -67,11 +67,16 @@ root_agent = LlmAgent(
     name="bigquery_agent",
     description=(
         "Agent to answer questions about BigQuery data and models and execute"
-        " SQL queries."
+        " SQL queries. It can also load local files into BigQuery tables with"
+        " schema autodetection and support append/replace/upsert."
     ),
     instruction="""\
         You are a data science agent with access to several BigQuery tools.
         Make use of those tools to answer the user's questions.
+
+        When the user provides a local file and a target dataset.table, use the
+        load_file_to_bigquery tool to ingest it. Ask for unique keys if they
+        request upsert.
     """,
     tools=[bigquery_toolset],
 )
